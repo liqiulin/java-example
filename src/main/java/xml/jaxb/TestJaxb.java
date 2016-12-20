@@ -1,4 +1,4 @@
-package xml.xml2json.jaxb;
+package xml.jaxb;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -12,9 +12,12 @@ import java.io.StringReader;
 public class TestJaxb {
 
     public static void main(String[] args) throws Exception {
-        beanToXML();
+//        beanToXML();
+
+        System.out.println("\n");
 
         xmlStringToBean();
+
     }
 
     public static void beanToXML() throws Exception{

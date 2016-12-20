@@ -1,4 +1,4 @@
-package xml.xml2json.jaxb;
+package xml.jaxb;
 
 /**
  * Created by liqiulin on 2016/12/19.

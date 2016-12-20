@@ -1,4 +1,4 @@
-package xml.xml2json.jaxb;
+package xml.jaxb;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
