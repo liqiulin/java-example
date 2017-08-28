@@ -2,12 +2,39 @@ package url;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Date;
 
 /**
  * Created by liqiulin on 2016/12/21.
  */
 public class URLTest {
     public static void main(String[] args) throws Exception{
+        long monthMills = 30 * 24 * 60 * 60 * 1000L;
+        System.out.println(monthMills);
+        long t = System.currentTimeMillis();
+        System.out.println(t);
+        System.out.println(new Date(t));
+
+        t = t - monthMills;
+        System.out.println(t);
+        System.out.println(new Date(t));
+
+        t = t - monthMills;
+        System.out.println(t);
+        System.out.println(new Date(t));
+
+        t = t - monthMills;
+        System.out.println(t);
+        System.out.println(new Date(t));
+
+        t = t - monthMills;
+        System.out.println(t);
+        System.out.println(new Date(t));
+
+        t = t - monthMills;
+        System.out.println(t);
+        System.out.println(new Date(t));
+
 
         System.out.println("=============================================");
         String s = "http://www.baidu.com";
@@ -61,6 +88,8 @@ public class URLTest {
     }
 
     public static String appendDefaultQuery(String urlStr) {
+
+
         try {
             URL url = new URL(urlStr);
             if (!"http".equals(url.getProtocol()) && !"https".equals(url.getProtocol()) ) {

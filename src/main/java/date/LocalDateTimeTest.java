@@ -1,4 +1,4 @@
-
+package date;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -18,19 +18,39 @@ public class LocalDateTimeTest {
         System.out.println(epochImlli);
         System.out.println(new Date(epochImlli));
 
-        LocalDateTime localDateTime = LocalDateTime.of(2017, Month.MARCH, 9, 23, 59, 59);
-        long m = getLocalDateTimeMills(localDateTime);
-        System.out.println(new Date(m));
+        LocalDateTime localDateTime;
+        long m;
 
-        localDateTime = LocalDateTime.of(2017, Month.JULY, 10, 23, 59, 59);
+        localDateTime = LocalDateTime.of(2017, Month.JULY, 31, 0, 0, 0);
         m = getLocalDateTimeMills(localDateTime);
         System.out.println(m);
         System.out.println(new Date(m));
+        System.out.println(new Date(1501430400000L));
 
-        localDateTime = LocalDateTime.of(2017, Month.JULY, 16, 23, 59, 59);
+        localDateTime = LocalDateTime.of(2017, Month.AUGUST, 4, 23, 59, 59);
         m = getLocalDateTimeMills(localDateTime);
         System.out.println(m);
         System.out.println(new Date(m));
+        System.out.println(new Date(1501862399000L));
+
+
+        localDateTime = LocalDateTime.of(2017, Month.AUGUST, 7, 0, 0, 0);
+        m = getLocalDateTimeMills(localDateTime);
+        System.out.println(new Date(m)   +  "  "+ m);
+
+        localDateTime = LocalDateTime.of(2017, Month.AUGUST, 13, 23, 59, 59);
+        m = getLocalDateTimeMills(localDateTime);
+        System.out.println(new Date(m)   +  "  "+ m);localDateTime = LocalDateTime.of(2017, Month.AUGUST, 13, 23, 59, 59);
+
+
+        m = getLocalDateTimeMills(localDateTime);
+        System.out.println(new Date(m)   +  "  "+ m);localDateTime = LocalDateTime.of(2017, Month.JULY, 15, 23, 59, 59);
+        m = getLocalDateTimeMills(localDateTime);
+        System.out.println(new Date(m)   +  "  "+ m);localDateTime = LocalDateTime.of(2017, Month.AUGUST, 15, 23, 59, 59);
+        m = getLocalDateTimeMills(localDateTime);
+        System.out.println(new Date(m)   +  "  "+ m);
+
+
     }
 
     /**
