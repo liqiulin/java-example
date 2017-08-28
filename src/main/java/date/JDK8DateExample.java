@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
  * Created by liqiulin on 2017/7/21.
  */
 public class JDK8DateExample {
+
     public static void main(String[] args) {
         String dateString = "2017-07-01";
         String dateString2 = translateDateString(dateString);
