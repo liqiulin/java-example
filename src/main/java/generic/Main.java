@@ -1,6 +1,5 @@
 package generic;
 
-import org.apache.xpath.operations.Bool;
 
 /**
  * Created by qiulin on 2017-4-3.
