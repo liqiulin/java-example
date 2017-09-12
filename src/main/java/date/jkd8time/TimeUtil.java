@@ -6,8 +6,6 @@ import java.time.ZoneOffset;
 import java.util.Date;
 
 /**
- *  <a href="http://www.cnblogs.com/swiftma/p/7424888.html">老马说编程</a>
- *<br/>
  * Created by qiulin on 2017-9-7.
  */
 public final class TimeUtil {
