@@ -1,6 +1,7 @@
 package date;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -20,5 +21,14 @@ public class JDK8DateExample {
     public static String translateDateString(String dateString) {
         LocalDate localDate = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("uuuu-MM-dd"));
         return localDate.format(DateTimeFormatter.ofPattern("uuuu-MM"));
+    }
+
+    /**
+     * 获取北京时区
+     * @return
+     */
+    public static ZoneId getBJZoneId() {
+//        return ZoneId.of(ZoneId.SHORT_IDS.get("CTT"));
+        return ZoneId.of("GMT+08:00");
     }
 }

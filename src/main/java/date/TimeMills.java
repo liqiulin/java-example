@@ -1,8 +1,8 @@
 package date;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
+import java.awt.*;
+import java.time.*;
+import java.util.Date;
 
 /**
  * Created by liqiulin on 2017/9/4.
@@ -27,6 +27,16 @@ public class TimeMills {
         LocalDate lastMonth = now.minusDays(30);
         endTime = getLocalDateTimeMills(lastMonth.atStartOfDay());
         System.out.println(endTime);
+
+
+        System.out.println(new Date().getTime());
+        System.out.println(Instant.now().toEpochMilli());
+        System.out.println(new Date(Instant.now().toEpochMilli()));
+        System.out.println(new Date(toBeiJingInstant(LocalDateTime.now()).toEpochMilli()));
+    }
+
+    public static Instant toBeiJingInstant(LocalDateTime ldt) {
+        return ldt.toInstant(ZoneOffset.of("+08:00"));
     }
 
     /**

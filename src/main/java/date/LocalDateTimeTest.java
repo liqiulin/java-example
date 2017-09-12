@@ -1,22 +1,21 @@
 package date;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Month;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.Date;
 
 /**
+ * <a href="http://www.cnblogs.com/swiftma/p/7424888.html" >计算机程序的思维逻辑 (95) - Java 8的日期和时间API</a>
+ * <a href="https://github.com/swiftma/program-logic" >git address</a>
+ *
  * Created by liqiulin on 2016/6/13.
  */
 public class LocalDateTimeTest {
     public static void main(String[] args) {
-        System.out.println(getDefaultDataEndTime());
-
-        long epochImlli = LocalDate.now().atStartOfDay().minusSeconds(1).toInstant(ZonedDateTime.now().getOffset()).toEpochMilli();
-
-        System.out.println(epochImlli);
-        System.out.println(new Date(epochImlli));
+        // 当前最后一刻
+        long lastTimeOfToday = getDefaultDataEndTime();
+        System.out.println("今天最后一刻 " + lastTimeOfToday);
+        System.out.println("今天最后一刻 " + new Date(lastTimeOfToday));
+        System.out.println("今天最后一刻 " + Instant.ofEpochMilli(lastTimeOfToday).toEpochMilli());
 
         LocalDateTime localDateTime;
         long m;
@@ -34,21 +33,10 @@ public class LocalDateTimeTest {
         System.out.println(new Date(1501862399000L));
 
 
-        localDateTime = LocalDateTime.of(2017, Month.AUGUST, 7, 0, 0, 0);
-        m = getLocalDateTimeMills(localDateTime);
-        System.out.println(new Date(m)   +  "  "+ m);
-
-        localDateTime = LocalDateTime.of(2017, Month.AUGUST, 13, 23, 59, 59);
-        m = getLocalDateTimeMills(localDateTime);
-        System.out.println(new Date(m)   +  "  "+ m);localDateTime = LocalDateTime.of(2017, Month.AUGUST, 13, 23, 59, 59);
-
-
-        m = getLocalDateTimeMills(localDateTime);
-        System.out.println(new Date(m)   +  "  "+ m);localDateTime = LocalDateTime.of(2017, Month.JULY, 15, 23, 59, 59);
-        m = getLocalDateTimeMills(localDateTime);
-        System.out.println(new Date(m)   +  "  "+ m);localDateTime = LocalDateTime.of(2017, Month.AUGUST, 15, 23, 59, 59);
-        m = getLocalDateTimeMills(localDateTime);
-        System.out.println(new Date(m)   +  "  "+ m);
+        System.out.println(Instant.now());  // instant 是绝对时间（GMT）, ZoneDateTime是时区时间
+        ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
+        System.out.println(zdt);
+        System.out.println(zdt.toInstant());
 
 
     }
@@ -58,7 +46,7 @@ public class LocalDateTimeTest {
      * @return
      */
     public static long getDefaultDataEndTime() {
-        LocalDateTime defaultDateTime = LocalDate.now().atStartOfDay().minusSeconds(1);
+        LocalDateTime defaultDateTime = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
         return defaultDateTime.toInstant(ZonedDateTime.now().getOffset()).toEpochMilli();
     }
 
@@ -70,5 +58,7 @@ public class LocalDateTimeTest {
     public static long getLocalDateTimeMills(LocalDateTime localDateTime) {
         return localDateTime.toInstant(ZonedDateTime.now().getOffset()).toEpochMilli();
     }
+
+
 
 }
